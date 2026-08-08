@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | J & T</title>
+    <title>Our Story | J & T</title>
     <meta
       name="description"
-      content="A dedicated gallery page for the photos and memories from our journey."
+      content="The memories and story of our journey together."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,23 +30,36 @@
       </nav>
 
       <div class="gallery-hero reveal">
-        <p class="section-tag">Our gallery</p>
-        <h1>Every photo, every memory, every chapter.</h1>
+        <p class="section-tag">Our memories</p>
+        <h1>How we found our way to each other.</h1>
         <p>
-          This page is for the full collection — a growing home for the moments we want to keep close.
+          Every moment, every laugh, and every quiet second that brought us closer. This is the story of us.
         </p>
       </div>
     </header>
 
     <main>
-      <section class="gallery-section reveal" id="gallery">
-        <div class="section-heading">
-          <p class="section-tag">Photos</p>
-          <h2>Our favorite memories</h2>
+      <section class="story-section reveal">
+        <div class="story-card">
+          <p class="section-tag">Our journey</p>
+          <h2>The beginning and everything after.</h2>
+          <p id="typedStory" class="typed-story"></p>
         </div>
-        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
+
+      <section class="intro-section reveal">
+        <p class="section-tag">In photos</p>
+        <h2>Captured moments we'll never forget.</h2>
+        <p>
+          Head over to the gallery to see the full collection of memories we've created together.
+        </p>
+        <a class="button" href="gallery.html">View the gallery</a>
       </section>
     </main>
+
+    <footer class="footer">
+      <p>Made with love for your shared story.</p>
+    </footer>
 
     <div id="photoModal" class="photo-modal" aria-hidden="true">
       <button class="modal-close" id="closeModal" aria-label="Close photo viewer">×</button>
