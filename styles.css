@@ -38,16 +38,21 @@ a {
 }
 
 .hero {
-  padding: 24px 20px 56px;
-  background: radial-gradient(circle at top right, rgba(217, 108, 123, 0.18), transparent 30%),
-    linear-gradient(135deg, #fff4eb 0%, #fffdfb 100%);
+  padding: 24px 20px 64px;
+  background: linear-gradient(135deg, #fdf2eb 0%, #fff8f4 45%, #f8e7e1 100%);
+}
+
+.gallery-header {
+  padding: 24px 20px 36px;
+  background: linear-gradient(135deg, #fdf2eb 0%, #fff8f4 45%, #f8e7e1 100%);
 }
 
 .topbar,
 .hero-content,
 main,
-.footer {
-  width: min(100%, 1160px);
+.footer,
+.gallery-hero {
+  width: min(100%, 1100px);
   margin-inline: auto;
 }
 
@@ -75,10 +80,21 @@ main,
 }
 
 .hero-content {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  display: flex;
+  justify-content: center;
   align-items: center;
+  min-height: 320px;
+}
+
+.hero-copy {
+  max-width: 720px;
+  text-align: center;
+  padding: 32px 24px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(43, 31, 45, 0.08);
+  border-radius: 28px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 12px 30px rgba(43, 31, 45, 0.06);
 }
 
 .eyebrow,
@@ -102,7 +118,7 @@ main,
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 4.2vw, 4.2rem);
+  font-size: clamp(2rem, 3.6vw, 3.1rem);
 }
 
 .hero-text,
@@ -124,27 +140,6 @@ main,
   box-shadow: 0 10px 25px rgba(217, 108, 123, 0.22);
 }
 
-.hero-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-}
-
-.hero-card-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: var(--accent-2);
-  margin-bottom: 12px;
-}
-
-.hero-card h2 {
-  font-size: 1.3rem;
-  margin: 0 0 8px;
-}
-
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -160,10 +155,78 @@ main {
   padding: 0 20px 48px;
 }
 
+.intro-section {
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.feature-section {
+  margin-top: 40px;
+}
+
+.feature-card,
+.story-card {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(43, 31, 45, 0.08);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 28px rgba(43, 31, 45, 0.06);
+  text-align: center;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.feature-photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 20px 0 18px;
+}
+
+.feature-photo-card {
+  overflow: hidden;
+  border-radius: 18px;
+  background: var(--surface);
+}
+
+.feature-photo-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-photo-card p {
+  margin: 0;
+  padding: 10px 8px 12px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.story-section {
+  margin-top: 28px;
+}
+
+.story-card {
+  text-align: left;
+}
+
+.typed-story {
+  font-size: 1.04rem;
+  line-height: 1.8;
+  color: var(--muted);
+  min-height: 120px;
+}
+
+.gallery-hero {
+  max-width: 760px;
+  padding: 28px 0 8px;
+  text-align: center;
+}
+
 .intro-section,
-.timeline-section,
-.gallery-section,
-.future-section {
+.gallery-section {
   margin-top: 56px;
 }
 
@@ -213,15 +276,21 @@ main {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  gap: 18px;
+}
+
+.gallery-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.6vw, 2.8rem);
+  margin: 0 0 12px;
 }
 
 .gallery-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 16px 35px rgba(43, 31, 45, 0.06);
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -338,11 +407,11 @@ main {
 
 @media (max-width: 900px) {
   .hero-content {
-    grid-template-columns: 1fr;
+    min-height: 280px;
   }
 
-  .hero-card {
-    max-width: 480px;
+  .feature-photos {
+    grid-template-columns: 1fr;
   }
 
   .gallery-grid {
@@ -353,6 +422,10 @@ main {
 @media (max-width: 640px) {
   .hero {
     padding-inline: 16px;
+  }
+
+  .hero-copy {
+    padding: 24px 18px;
   }
 
   .topbar {
