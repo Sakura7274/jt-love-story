@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Journey | J & T</title>
+    <meta
+      name="description"
+      content="A beautiful space to tell the story of your love through photos, memories, and milestones."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="topbar">
+        <a class="brand" href="#top">J & T</a>
+        <div class="nav-links">
+          <a href="#memories">Our story</a>
+          <a href="#gallery">Photos</a>
+          <a href="#future">The next chapter</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">A love story in motion</p>
+          <h1>Our journey, one photo at a time.</h1>
+          <p class="hero-text">
+            This is a place for your favorite memories, the quiet moments, the big adventures,
+            and all the little details that made your story beautiful.
+          </p>
+          <a class="button" href="#memories">Open the story</a>
+        </div>
+
+        <div class="hero-card">
+          <p class="hero-card-label">So far</p>
+          <h2 id="memoryCount">0 memories and counting</h2>
+          <p>
+            Add a new chapter whenever you want. This space grows with you.
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro-section reveal">
+        <p class="section-tag">Welcome</p>
+        <h2>A home for your favorite memories</h2>
+        <p>
+          Build this over time as a living scrapbook of your relationship. Keep the photos, the dates,
+          the tiny details, and the feelings that made each moment unforgettable.
+        </p>
+      </section>
+
+      <section class="timeline-section reveal" id="memories">
+        <div class="section-heading">
+          <p class="section-tag">Our story</p>
+          <h2>Moments that shaped us</h2>
+        </div>
+        <div id="timeline" class="timeline"></div>
+      </section>
+
+      <section class="gallery-section reveal" id="gallery">
+        <div class="section-heading">
+          <p class="section-tag">Gallery</p>
+          <h2>Photos we love</h2>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
+
+      <section class="future-section reveal" id="future">
+        <div class="future-card">
+          <p class="section-tag">The next chapter</p>
+          <h2>Keep adding to this story.</h2>
+          <p>
+            Every new adventure, every laugh, every ordinary day can become part of the website.
+            This is your long-term project, and it can grow beautifully over time.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Made with love for your shared story.</p>
+    </footer>
+
+    <div id="photoModal" class="photo-modal" aria-hidden="true">
+      <button class="modal-close" id="closeModal" aria-label="Close photo viewer">×</button>
+      <button class="modal-nav modal-nav-left" id="prevPhoto" aria-label="Previous photo">←</button>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="" />
+        <div class="modal-caption">
+          <h3 id="modalTitle"></h3>
+          <p id="modalLocation"></p>
+        </div>
+      </div>
+      <button class="modal-nav modal-nav-right" id="nextPhoto" aria-label="Next photo">→</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
