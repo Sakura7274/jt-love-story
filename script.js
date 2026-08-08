@@ -40,6 +40,7 @@ const modalLocation = document.getElementById('modalLocation');
 const closeModal = document.getElementById('closeModal');
 const prevPhoto = document.getElementById('prevPhoto');
 const nextPhoto = document.getElementById('nextPhoto');
+const typedStory = document.getElementById('typedStory');
 let currentPhotoIndex = 0;
 
 if (memoryCount) {
@@ -174,3 +175,19 @@ document.addEventListener('keydown', (event) => {
     }
   }
 });
+
+if (typedStory) {
+  const storyText = 'We started with a simple hello, and somehow that became the beginning of something beautiful. Every laugh, every quiet moment, and every little adventure has brought us closer. This is our story, still unfolding, and I hope it always feels like home.';
+  let index = 0;
+
+  const typeStory = () => {
+    typedStory.textContent = storyText.slice(0, index);
+    index += 1;
+
+    if (index <= storyText.length) {
+      window.setTimeout(typeStory, 28);
+    }
+  };
+
+  window.setTimeout(typeStory, 400);
+}
