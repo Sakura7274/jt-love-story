@@ -37,6 +37,14 @@ if "$GIT_CMD" diff --cached --quiet; then
 fi
 
 "$GIT_CMD" commit -m "$commit_message"
+
+# Keep local and remote branches in sync by fetching and rebasing before push.
+if "$GIT_CMD" ls-remote --exit-code origin main >/dev/null 2>&1; then
+  echo "Fetching remote changes and rebasing..."
+  "$GIT_CMD" fetch origin main
+  "$GIT_CMD" rebase origin/main
+fi
+
 "$GIT_CMD" push -u origin main
 
 echo "Website pushed successfully. GitHub Pages should update shortly."
