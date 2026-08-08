@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | J & T</title>
+    <meta
+      name="description"
+      content="A dedicated gallery page for the photos and memories from our journey."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="gallery-header">
+      <nav class="topbar">
+        <a class="brand" href="index.html">J & T</a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+        </div>
+      </nav>
+
+      <div class="gallery-hero reveal">
+        <p class="section-tag">Our gallery</p>
+        <h1>Every photo, every memory, every chapter.</h1>
+        <p>
+          This page is for the full collection — a growing home for the moments we want to keep close.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="gallery-section reveal" id="gallery">
+        <div class="section-heading">
+          <p class="section-tag">Photos</p>
+          <h2>Our favorite memories</h2>
+        </div>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
+    </main>
+
+    <div id="photoModal" class="photo-modal" aria-hidden="true">
+      <button class="modal-close" id="closeModal" aria-label="Close photo viewer">×</button>
+      <button class="modal-nav modal-nav-left" id="prevPhoto" aria-label="Previous photo">←</button>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="" />
+        <div class="modal-caption">
+          <h3 id="modalTitle"></h3>
+          <p id="modalLocation"></p>
+        </div>
+      </div>
+      <button class="modal-nav modal-nav-right" id="nextPhoto" aria-label="Next photo">→</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
